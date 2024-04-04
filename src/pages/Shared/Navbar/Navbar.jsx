@@ -1,13 +1,16 @@
 import { Link } from "react-router-dom";
+import userImage from '../../../assets/user.png'
 
 const Navbar = () => {
   const NavLinks = <>
     <li><Link className="text-lg " to='/'>Home</Link></li>
     <li><Link className="text-lg " to='/about'>About</Link></li>
     <li><Link className="text-lg " to='/career'>Career</Link></li>
+    <li><Link className="text-lg " to='/register'>Register</Link></li>
+    <li><Link className="text-lg " to='/login'>Login</Link></li>
   </>
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar pt-5">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -23,8 +26,9 @@ const Navbar = () => {
       {NavLinks}
     </ul>
   </div>
-  <div className="navbar-end">
-    <a className="btn">Button</a>
+  <div className="navbar-end flex gap-4">
+    <img className="w-10" src={userImage} alt="" />
+    <Link to='/login' className="btn bg-[#403F3F] rounded-none text-white text-xl font-semibold px-10">Login</Link>
   </div>
 </div>
   );

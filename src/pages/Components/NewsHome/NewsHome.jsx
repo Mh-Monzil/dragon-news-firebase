@@ -2,7 +2,7 @@
 
 const NewsHome = () => {
     return (
-        <div>
+        <div className="border">
             News home
         </div>
     );
