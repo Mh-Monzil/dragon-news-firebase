@@ -5,6 +5,7 @@ import NewsHome from "../Components/NewsHome/NewsHome";
 import RightSideNav from "../Components/RightSideNav/RightSideNav";
 import Header from "../Shared/Header/Header";
 import Navbar from "../Shared/Navbar/Navbar";
+import LatestNews from "../Components/LatestNews/LatestNews";
 
 
 const Home = () => {
@@ -13,6 +14,7 @@ const Home = () => {
     return (
         <div className=''>
             <Header></Header>
+            <LatestNews></LatestNews>
             <Navbar></Navbar>
             <div className="grid md:grid-cols-4 gap-6 mt-20">
                 <div><LeftSideNav /></div>

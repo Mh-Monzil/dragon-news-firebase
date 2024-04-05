@@ -3,7 +3,7 @@ import { IoShareSocialOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 
 const NewsHome = ({news}) => {
-    const {author,image_url, title, total_view,details, rating } = news;
+    const {author,image_url, title, total_view,details, rating, _id } = news;
     console.log(news);
   return (
     <div className="flex flex-col p-6 space-y-6 overflow-hidden rounded-lg shadow-md bg-gray-100 text-gray-800">
@@ -42,7 +42,9 @@ const NewsHome = ({news}) => {
         <p className="mt-8 text-gray-600">
           {
             details.length > 300 ?
-            <p>{details.slice(0,300)} <Link className="text-rose-500 font-semibold"> Read More...</Link></p> :
+            <p>{details.slice(0,300)} <Link 
+            to={`/news/${_id}`}
+            className="text-rose-500 font-semibold"> Read More...</Link></p> :
             <p>{details}</p>
           }
         </p>
