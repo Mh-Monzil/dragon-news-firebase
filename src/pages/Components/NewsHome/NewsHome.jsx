@@ -2,6 +2,7 @@ import { FaRegBookmark, FaRegEye, FaStar } from "react-icons/fa6";
 import { IoShareSocialOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 
+
 const NewsHome = ({news}) => {
     const {author,image_url, title, total_view,details, rating, _id } = news;
     console.log(news);
