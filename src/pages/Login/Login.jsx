@@ -1,17 +1,30 @@
 import { Link } from "react-router-dom";
 import Navbar from "../Shared/Navbar/Navbar";
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const Login = () => {
-
+    const {loginUser} = useContext(AuthContext);
     const handleLogin = (e) => {
         e.preventDefault();
+        const form =  new FormData(e.currentTarget);
+        const email = form.get('email');
+        const password = form.get('password');
+
+      loginUser(email,password)
+      .then(result => {
+        console.log(result.user);
+      })
+      .catch(error => {
+        console.error(error.message);
+      })
     }
     
   return (
     <div className="bg-[#F3F3F3] h-screen">
       <Navbar />
       <div className="md:w-3/4 lg:w-1/2 mx-auto bg-white mt-32 rounded-md p-16">
-        <h2 className="text-center text-3xl font-semibold pb-12 mb-12 border-b">Please Login</h2>
+        <h2 className="text-center text-3xl font-semibold pb-12 mb-12 border-b">Login</h2>
         
         <form onSubmit={handleLogin} className=" ">
           <div className="form-control">
